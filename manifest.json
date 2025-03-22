@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "adblocker",
+    "version": "1.1",
+    "permissions": [
+      "declarativeNetRequest",
+      "declarativeNetRequestFeedback"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "declarative_net_request": {
+        "rule_resources": [
+          {
+            "id": "block_ads",
+            "enabled": true,
+            "path": "urls.json"
+          }
+        ]
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["urls.txt"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+}
