@@ -1,5 +1,5 @@
 with open("urls.txt", 'r') as domains, open("urls.json", 'w') as json:
-    domainList = domains.readlines()  # Corrected readLines to readlines
+    domainList = domains.readlines()
     count = 0
     for domain in domainList:
         count+= 1
@@ -14,5 +14,5 @@ with open("urls.txt", 'r') as domains, open("urls.json", 'w') as json:
                 "urlFilter": "{domain}"
             }}
         }},
-        """  # Properly formatted JSON string with dynamic domain
-        json.write(L + '\n')  # Write each block with a newline
+        """  
+        json.write(L)
